@@ -13,7 +13,7 @@ export default function Home() {
           width={1000}
           height={1000}
           priority={true}
-          className="object-cover transform -scale-x-100  w-full max-h-screen min-h-[850px]"
+          className="object-cover transform -scale-x-100  w-full max-h-screen lg:min-h-[870px] xl:min-h-[1200px] min-h-[800px]"
           alt="bro codewith kalyjay"
         ></Image>
         <div className="gradient-overlay"></div>
