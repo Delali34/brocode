@@ -50,8 +50,8 @@ export default function WordScroller() {
           key={index}
           className={`word ${
             index === activeWordIndex
-              ? "active lg:text-[28px] text-[20px] cursor-pointer text-white font-bold"
-              : "lg:text-[18px] text-[14px] cursor-pointer text-white"
+              ? "active lg:text-[28px] text-[18px] cursor-pointer text-white font-bold"
+              : "lg:text-[18px] text-[12px] cursor-pointer text-white"
           }`}
         >
           {word}
