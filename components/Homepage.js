@@ -12,6 +12,7 @@ export default function Home() {
           src="/8K8A9902 (1).jpg"
           width={1000}
           height={1000}
+          priority={true}
           className="object-cover transform -scale-x-100  w-full max-h-screen min-h-[850px]"
           alt="bro codewith kalyjay"
         ></Image>
