@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const App = () => {
   return (
-    <div className="App   relative ">
+    <div className="App  ">
       <div className="svg">
         <section className="flex flex-col  lg:pt-20 pt-10  justify-between items-center container mx-auto p-2">
           <div>

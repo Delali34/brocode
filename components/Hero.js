@@ -7,8 +7,8 @@ import { PiApplePodcastsLogoFill } from "react-icons/pi";
 
 function hero() {
   return (
-    <div className="container mx-auto absolute top-0 lg:px-14 px-3  left-0 right-0 bottom-0 mt-20 flex flex-col justify-center font-Cali">
-      <div>
+    <div className="container my-auto mx-auto absolute  top-[20%] lg:px-14 px-3 right-0 left-0  mt-20 flex flex-col justify-center font-Cali">
+      <div className="">
         <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] text-primary font-bold">
           WE TALK,
         </h1>
