@@ -19,7 +19,7 @@ const App = () => {
             </p>
           </div>
           <div className="">
-            <VideoPlayer src="/videoplayback.mp4" />
+            <VideoPlayer src="/BRO CODE COMIING SOON - CAPT. KOFI AMOABENG (1).mp4" />
           </div>
         </section>
       </div>
