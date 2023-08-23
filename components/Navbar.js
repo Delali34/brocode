@@ -1,9 +1,52 @@
 // components/Navbar.js
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Menu from "@/components/Menu";
+import { auth, signOut } from "../firebase";
 
-const Navbar = () => {
+const Navbar = ({ userEmail }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const profileRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const getInitials = (email) => {
+    if (email) {
+      return email.charAt(0).toUpperCase();
+    }
+    return "G"; // G for Guest
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        !profileRef.current.contains(event.target)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Cleanup the event listener on component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Sign the user out
+      window.location.href = "/LogIn"; // Redirect to the login page
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   return (
     <nav className="absolute top-0 right-0 left-0 font-Cali z-10">
       <div className="container hidden mx-auto lg:flex justify-between items-center">
@@ -41,16 +84,29 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="flex items-center  gap-5 text-white cursor-pointer">
-          <h1 className="text-2xl bg-white/30 hover:bg-primary/60   flex items-center justify-center w-[150px] h-[50px] text-center p-1 font-bold rounded-[50px]">
-            Log In
+        <div className="relative gap-5 text-white cursor-pointer">
+          <h1
+            ref={profileRef}
+            onClick={toggleDropdown}
+            className="text-2xl font-bold font-Cali hover:border-2 p-3 w-[60px] h-[60px] -right-5 flex items-center justify-center rounded-[100%] bg-primary"
+          >
+            {getInitials(userEmail) || "P"} {/* P for Profile */}
           </h1>
-          <h1 className="text-2xl border-2 w-[160px] h-[50px] flex items-center justify-center rounded-[50px] hover:bg-primary/60">
-            Subscribe
-          </h1>
+
+          {isDropdownOpen && (
+            <div
+              ref={dropdownRef}
+              className="absolute right-0 mt-2 border rounded-md shadow-lg bg-primary font-bold text-black"
+            >
+              <div className="p-4">{userEmail}</div>
+              <hr className="border-t" />
+              <div onClick={handleLogout} className="p-4 hover:bg-white">
+                <button>Logout</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      <Menu />
     </nav>
   );
 };

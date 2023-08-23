@@ -362,3 +362,16 @@
 .menu-icon {
   cursor: pointer;
 }
+/* styles/SignUp.css */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

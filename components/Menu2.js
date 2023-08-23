@@ -5,7 +5,8 @@ import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { auth, signOut } from "../firebase";
-const menuItems = ["Latest Episode", "Shop", "Contact"];
+const menuItems = ["Log In"];
+import Link from "next/link";
 
 const MobileMenu = ({ userEmail }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,16 +62,23 @@ const MobileMenu = ({ userEmail }) => {
             alt="bro code"
             className=""
           />
+          <Link href="/LogIn">
+            <div>
+              <h1 className="text-[16px] hover:bg-primary text-white mr-4 border-2 p-2 rounded-[10px]">
+                Log In
+              </h1>
+            </div>
+          </Link>
 
-          <button
+          {/* <button
             onClick={() => setIsVisible(!isVisible)}
             className="text-white p-4 text-3xl "
           >
             <HiMenuAlt3 />
-          </button>
+          </button> */}
         </div>
 
-        <div
+        {/* <div
           className={`fixed top-0 right-0 h-screen w-3/4 bg-black transition-transform duration-1500 transform ${
             isVisible ? "translate-x-0" : "translate-x-full ease-in-out"
           }`}
@@ -86,7 +94,7 @@ const MobileMenu = ({ userEmail }) => {
                 onClick={toggleDropdown}
                 className="text-xl font-bold font-Cali hover:border-2 ml-[40px] p-2 w-[40px] h-[40px] -right-5 flex items-center justify-center rounded-[100%] bg-primary"
               >
-                {getInitials(userEmail) || "P"}
+                {getInitials(userEmail) || "P"} 
               </h1>
 
               {isDropdownOpen && (
@@ -95,9 +103,9 @@ const MobileMenu = ({ userEmail }) => {
                   className="absolute -right-[100px] mt-2 border text-[10px] rounded-md shadow-lg bg-primary font-bold text-black"
                 >
                   <div className="p-4">{userEmail}</div>
-                  <hr className="border-t hover:bg-white" />
-                  <div onClick={handleLogout} className="p-4 ">
-                    <button>Logout</button>
+                  <hr className="border-t" />
+                  <div className="p-4 hover:bg-white">
+                    <button onClick={handleLogout}>Logout</button>
                   </div>
                 </div>
               )}
@@ -107,7 +115,7 @@ const MobileMenu = ({ userEmail }) => {
               <AiOutlineClose className="text-white/70 text-xl mr-6" />
             </div>
           </div>
-          <div className="flex flex-col space-y-5 h-full justify-center   pl-10">
+          <div className="flex flex-col space-y-5 h-full justify-center pl-10">
             {menuItems.map((item, index) => (
               <div
                 key={index}
@@ -115,14 +123,14 @@ const MobileMenu = ({ userEmail }) => {
                   isVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
-                {item}
+                <Link href="/LogIn">{item}</Link>
               </div>
             ))}
             <p className="text-white text-[8px] pt-36">
               Copyright © Kalyjay Media All Rights Reserved TM 2023
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

@@ -1,12 +1,10 @@
 // pages/index.js
-import Navbar from "./Navbar";
+import Navbar3 from "./Navbar3";
 import Image from "next/image";
-import Hero from "./Hero";
+import Hero2 from "./Hero2";
 import Menu from "./Menu";
-import { auth } from "../firebase";
 
 export default function Home() {
-  const userEmail = auth.currentUser ? auth.currentUser.email : null;
   return (
     <div className="w-full  font-Cali">
       <div className="w-full relative ">
@@ -15,13 +13,12 @@ export default function Home() {
           width={1000}
           height={1000}
           priority={true}
-          className="object-cover transform -scale-x-100  w-full max-h-screen lg:min-h-[870px] xl:min-h-[1200px] min-h-[800px]"
+          className="object-cover transform -scale-x-100  w-full max-h-screen lg:min-h-[870px] xl:min-h-[1100px] min-h-[800px]"
           alt="bro codewith kalyjay"
         ></Image>
         <div className="gradient-overlay"></div>
-        <Navbar userEmail={userEmail} />
-        <Menu userEmail={userEmail} />
-        <Hero />
+        <Navbar3 />
+        <Hero2 />
       </div>
     </div>
   );
