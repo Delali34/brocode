@@ -21,7 +21,7 @@ function hero() {
         </p>
         <Link target="_blank" href="https://www.youtube.com/@BroCodeGH">
           <h1 className="rounded-[50px] w-[180px] h-[50px] text-black hover:bg-white cursor-pointer font-bold text-xl flex items-center animate-bounce justify-center mt-10 bg-primary">
-            Subscibe
+            Subscribe
           </h1>
         </Link>
 
