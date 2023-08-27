@@ -4,6 +4,7 @@ import { BsSpotify } from "react-icons/bs";
 import { PiGooglePodcastsLogoBold } from "react-icons/pi";
 import { AiFillYoutube } from "react-icons/ai";
 import { PiApplePodcastsLogoFill } from "react-icons/pi";
+
 import Link from "next/link";
 
 function hero() {
@@ -11,7 +12,7 @@ function hero() {
     <div className="container my-auto mx-auto absolute top-[15%]  lg:top-[20%] lg:px-14 px-3 right-0 left-0  mt-20 flex flex-col justify-center font-Cali">
       <div className="">
         <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] text-primary font-bold">
-          BOYS FOR TALK!!!
+          BOYS <br /> FOR TALK!!!
         </h1>
         {/* <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] lg:-mt-10 -mt-5 text-primary font-bold ">
           TALK
