@@ -10,7 +10,7 @@ import Link from "next/link";
 
 function hero() {
   return (
-    <div className="container overflow-hidden my-auto mx-auto absolute top-[20%]  lg:top-[25%] lg:px-14 px-3 right-0 left-0  mt-20 flex flex-col justify-center font-Cali">
+    <div className="container overflow-hidden my-auto mx-auto absolute top-[20%]  lg:top-[20%] lg:px-14 px-3 right-0 left-0  mt-20 flex flex-col justify-center font-Cali">
       <div className="">
         <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] text-primary font-bold">
           BOYS <br /> FOR TALK!!!
