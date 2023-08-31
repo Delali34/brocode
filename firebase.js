@@ -16,7 +16,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
 const googleProvider = new GoogleAuthProvider();
+
 export const signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
@@ -26,6 +28,7 @@ export const signInWithGoogle = async () => {
     throw error;
   }
 };
+auth.settings.appVerificationDisabledForTesting = false;
 export { signOut };
 export { auth };
 export { signInWithEmailAndPassword };

@@ -11,8 +11,11 @@ function hero() {
   return (
     <div className="container my-auto mx-auto absolute top-[15%]  lg:top-[15%] lg:px-14 px-3 right-0 left-0  mt-20 flex flex-col justify-center font-Cali">
       <div className="">
-        <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] text-primary font-bold">
-          BOYS <br /> FOR TALK!!!
+        <h1 className="xl:text-[120px] lg:text-[90px] text-[60px] text-primary font-black tracking-tighter">
+          BOYS
+        </h1>
+        <h1 className="xl:text-[120px] lg:text-[90px] lg:-mt-10 -mt-5 text-[60px] text-primary font-black tracking-tighter">
+          FOR TALK !!!
         </h1>
         {/* <h1 className="xl:text-[120px] lg:text-[90px] text-[50px] lg:-mt-10 -mt-5 text-primary font-bold ">
           TALK
