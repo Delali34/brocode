@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../app/ad.css"; // Adjust the path to your actual CSS file's location
 
 function Slide({ slide, current, handleSlideClick }) {
@@ -71,23 +71,38 @@ function Slider({ slides, heading }) {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(0);
   const [endX, setEndX] = useState(0);
+  const [autoSlide, setAutoSlide] = useState(true);
 
   const handleTouchStart = (event) => {
     setStartX(event.touches[0].clientX);
+    setAutoSlide(false); // stop auto sliding when user starts interacting
   };
 
   const handleTouchEnd = () => {
     if (startX - endX > 50) {
-      // The number 50 is arbitrary, adjust for sensitivity
       handleNextClick();
     } else if (endX - startX > 50) {
       handlePreviousClick();
     }
+
+    // Delayed reactivation of auto sliding after user interaction
+    setTimeout(() => {
+      setAutoSlide(true);
+    }, 5000); // reactivate after 5 seconds of user's last interaction
   };
 
   const handleTouchMove = (event) => {
     setEndX(event.touches[0].clientX);
   };
+  useEffect(() => {
+    if (autoSlide) {
+      const timer = setTimeout(() => {
+        handleNextClick();
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer); // This clears the timer if the component is unmounted
+    }
+  }, [current, autoSlide]);
 
   const handlePreviousClick = () => {
     const previous = current - 1;
