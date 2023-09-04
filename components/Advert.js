@@ -27,7 +27,7 @@ const slideData = [
 
 function SomePage() {
   return (
-    <div className="body9 lg:h-[70vh] h-[85vh]">
+    <div className="body9 h-[70vh]">
       <div className="app">
         <div>
           <h1 className="text-white lg:text-5xl text-3xl py-8 font-extrabold">
