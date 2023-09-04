@@ -27,10 +27,12 @@ const slideData = [
 
 function SomePage() {
   return (
-    <div className="body9">
+    <div className="body9 lg:h-[70vh] h-[85vh]">
       <div className="app">
         <div>
-          <h1 className="text-white text-6xl py-8 font-extrabold">SPONSORS</h1>
+          <h1 className="text-white lg:text-5xl text-3xl py-8 font-extrabold">
+            SPONSORS
+          </h1>
           <Slider heading="Example Slider" slides={slideData} />
         </div>
       </div>
