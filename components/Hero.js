@@ -31,32 +31,40 @@ function hero() {
 
         <section className="flex  items-center gap-5">
           <div>
-            <div className="border-2 mt-10  flex items-center rounded-[50px]  gap-3 justify-center p-2">
-              <BsSpotify className="text-green-500 md:text-4xl text-2xl" />
-              <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px]  font-semibold">
-                Spotify
-              </h1>
-            </div>
-            <div className="border-2 mt-10 rounded-[50px]  flex items-center gap-3 justify-center p-2">
-              <PiGooglePodcastsLogoBold className="text-yellow-500 md:text-4xl text-2xl" />
-              <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px] font-semibold">
-                Google Podcast
-              </h1>
-            </div>
+            <Link href="">
+              <div className="border-2 mt-10  flex items-center rounded-[50px]  gap-3 justify-center p-2">
+                <BsSpotify className="text-green-500 md:text-4xl text-2xl" />
+                <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px]  font-semibold">
+                  Spotify
+                </h1>
+              </div>
+            </Link>
+            <Link href="">
+              <div className="border-2 mt-10 rounded-[50px]  flex items-center gap-3 justify-center p-2">
+                <PiGooglePodcastsLogoBold className="text-yellow-500 md:text-4xl text-2xl" />
+                <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px] font-semibold">
+                  Google Podcast
+                </h1>
+              </div>
+            </Link>
           </div>
           <div>
-            <div className="border-2 mt-10  flex rounded-[50px]  items-center gap-3 justify-center p-2">
-              <AiFillYoutube className="text-red-600 md:text-4xl text-2xl" />
-              <h1 className="text-white xl:text-2xl text-[12px] font-semibold lg:text-[16px]">
-                Youtube
-              </h1>
-            </div>
-            <div className="border-2 mt-10  flex items-center rounded-[50px]  gap-3-center p-2">
-              <PiApplePodcastsLogoFill className="text-purple-500  md:text-4xl text-2xl" />
-              <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px] font-semibold">
-                Apple Podcast
-              </h1>
-            </div>
+            <Link href="">
+              <div className="border-2 mt-10  flex rounded-[50px]  items-center gap-3 justify-center p-2">
+                <AiFillYoutube className="text-red-600 md:text-4xl text-2xl" />
+                <h1 className="text-white xl:text-2xl text-[12px] font-semibold lg:text-[16px]">
+                  Youtube
+                </h1>
+              </div>
+            </Link>
+            <Link href="">
+              <div className="border-2 mt-10  flex items-center rounded-[50px]  gap-3-center p-2">
+                <PiApplePodcastsLogoFill className="text-purple-500  md:text-4xl text-2xl" />
+                <h1 className="text-white xl:text-2xl text-[12px] lg:text-[16px] font-semibold">
+                  Apple Podcast
+                </h1>
+              </div>
+            </Link>
           </div>
         </section>
       </div>

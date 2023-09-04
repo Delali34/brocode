@@ -13,7 +13,7 @@ import TopicScroll from "@/components/TopicScroll";
 import Slider from "@/components/Slider";
 import SocialMedia from "@/components/Footer";
 import Home from "@/components/Home";
-import Fun from "@/components/fun";
+import Advert from "@/components/Advert";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
           <Host />
           <TopicScroll />
           <Slider />
-          <Fun />
+          <Advert />
           <SocialMedia />
         </div>
       ) : (

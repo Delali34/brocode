@@ -5,12 +5,12 @@ const slides = [
   {
     city: "Cameos",
     country: "The bro code",
-    img: "/cameos.jpg",
+    img: "/cameo.jpg",
   },
   {
     city: "Giveaway",
     country: "The bro code",
-    img: "/GIVEAWAY1.jpg",
+    img: "/give.jpg",
   },
   {
     city: "Games",

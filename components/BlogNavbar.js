@@ -49,7 +49,7 @@ const Navbar = ({ userEmail }) => {
   };
 
   return (
-    <nav className="absolute top-0 right-0 left-0 font-Cali z-10">
+    <nav className="font-Cali z-10">
       <div className="container hidden mx-auto lg:flex justify-between items-center">
         <Link className="text-4xl font-bold" href="/">
           <Image
