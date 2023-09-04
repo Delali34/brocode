@@ -69,6 +69,25 @@ const SliderControl = ({ type, title, handleClick }) => {
 
 function Slider({ slides, heading }) {
   const [current, setCurrent] = useState(0);
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
+
+  const handleTouchStart = (event) => {
+    setStartX(event.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (startX - endX > 50) {
+      // The number 50 is arbitrary, adjust for sensitivity
+      handleNextClick();
+    } else if (endX - startX > 50) {
+      handlePreviousClick();
+    }
+  };
+
+  const handleTouchMove = (event) => {
+    setEndX(event.touches[0].clientX);
+  };
 
   const handlePreviousClick = () => {
     const previous = current - 1;
@@ -95,7 +114,13 @@ function Slider({ slides, heading }) {
 
   return (
     <div className="slider1" aria-labelledby={headingId}>
-      <ul className="slider1__wrapper" style={wrapperTransform}>
+      <ul
+        className="slider1__wrapper"
+        style={wrapperTransform}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <h3 id={headingId} className="visuallyhidden">
           {heading}
         </h3>

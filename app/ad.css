@@ -76,7 +76,7 @@
   transform: rotate(180deg);
 }
 .slider1 {
-  --slide-size: 50vmin;
+  --slide-size: 40vmin;
   --slide-margin: 4vmin;
   margin-left: 10px;
   height: var(--slide-size);

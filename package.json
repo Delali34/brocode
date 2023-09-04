@@ -17,6 +17,7 @@
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.16",
     "firebase": "^10.2.0",
+    "lodash": "^4.17.21",
     "next": "13.4.16",
     "postcss": "8.4.28",
     "react": "18.2.0",
