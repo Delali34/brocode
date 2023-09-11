@@ -1,9 +1,6 @@
 "use client";
-import {
-  auth,
-  signInWithEmailAndPassword,
-  signInWithGoogle,
-} from "../firebase";
+import { auth, signInWithEmailAndPassword } from "../firebase";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import Navbar from "./Navbar2";
 import Link from "next/link";
@@ -56,11 +53,21 @@ function Login() {
   };
 
   const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
     try {
-      await signInWithGoogle();
-      window.location.href = "/";
+      await signInWithPopup(auth, provider);
+      console.log("Signed up with Google.");
+      // Redirecting after sign up with Google
+      if (typeof window !== "undefined") {
+        window.location.href = "/";
+      }
     } catch (err) {
-      setError("Failed to login with Google. Please try again.");
+      console.error(err);
+      switch (err.code) {
+        case "auth/unauthorized-domain":
+          setErrorMessage("error. Please sign up.");
+          break;
+      }
     }
   };
 
