@@ -14,6 +14,7 @@ function Login() {
   const [error, setError] = useState(null);
   const [emailError, setEmailError] = useState(null);
   const [passwordError, setPasswordError] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -22,7 +23,18 @@ function Login() {
     setError(null);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      if (!user.emailVerified) {
+        setError(
+          "Email not verified. Please check your email for verification link or Sign up again."
+        );
+        return;
+      }
       window.location.href = "/";
     } catch (err) {
       switch (err.code) {
@@ -38,6 +50,7 @@ function Login() {
       }
     }
   };
+
   const handleGoogleLogin = async () => {
     try {
       await signInWithGoogle();

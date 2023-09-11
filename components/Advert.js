@@ -1,43 +1,99 @@
-import Slider from "./SliderComponent"; // Adjust path as necessary
-const slideData = [
-  {
-    index: 0,
+import React from "react";
+import "../app/ad.css";
 
-    src: "/papa4.jpg",
-  },
-  {
-    index: 1,
-    headline: "",
-    button: "",
-    src: "/papa1.jpg",
-  },
-  {
-    index: 2,
-    headline: "",
-    button: "",
-    src: "/papa3.jpeg",
-  },
-  {
-    index: 3,
-    headline: "",
-    button: "",
-    src: "/papa5.jpg",
-  },
-];
-
-function SomePage() {
+function Advert() {
   return (
-    <div className="body9 h-[70vh]">
-      <div className="app">
-        <div>
-          <h1 className="text-white lg:text-5xl text-3xl py-8 font-extrabold">
-            SPONSORS
-          </h1>
-          <Slider heading="Example Slider" slides={slideData} />
+    <div className="bg-black">
+      <div>
+        <h1 className="text-white text-4xl text-center pt-10 font-bold">
+          SPONSORS
+        </h1>
+      </div>{" "}
+      <div className="body5">
+        <div class="slider3">
+          <div class="slide-track">
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+            <div class="slide3">
+              <img
+                src="/munchys logo png (1).png"
+                height="180"
+                width="180"
+                alt=""
+              />
+            </div>
+            <div class="slide3">
+              <img src="/papapizza.png" height="180" width="180" alt="" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default SomePage;
+export default Advert;

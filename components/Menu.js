@@ -2,10 +2,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { auth, signOut } from "../firebase";
-const menuItems = ["Latest Episode", "Shop", "Contact"];
+const menuItems = ["Latest Episode", "Blog", "Contact"];
 
 const MobileMenu = ({ userEmail }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -108,16 +109,28 @@ const MobileMenu = ({ userEmail }) => {
             </div>
           </div>
           <div className="flex flex-col space-y-5 h-full justify-center   pl-10">
-            {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className={`text-white/70 font-bold transition-opacity duration-1000 text-[16px]  ${
-                  isVisible ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                {item}
-              </div>
-            ))}
+            <div
+              className={`text-white/70 font-bold transition-opacity duration-1000 text-[16px]  ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Link href="/">Latest Episode</Link>
+            </div>
+            <div
+              className={`text-white/70 font-bold transition-opacity duration-1000 text-[16px]  ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Link href="/blog">Blog</Link>
+            </div>
+            <div
+              className={`text-white/70 font-bold transition-opacity duration-1000 text-[16px]  ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Link href="Upcoming">Upcoming</Link>
+            </div>
+
             <p className="text-white text-[8px] pt-36">
               Copyright © Kalyjay Media All Rights Reserved TM 2023
             </p>

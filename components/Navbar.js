@@ -63,17 +63,17 @@ const Navbar = ({ userEmail }) => {
           <li>
             <Link
               className="cursor-point hover:text-primary hover:-mt-5"
-              href="/latest-episode"
+              href="/form"
             >
-              Latest Episode
+              Help Request
             </Link>
           </li>
           <li>
             <Link
               className="cursor-point hover:-mt-5 hover:text-primary"
-              href="/team"
+              href="/blog"
             >
-              Team
+              Blog
             </Link>
           </li>
           <li>
@@ -81,7 +81,7 @@ const Navbar = ({ userEmail }) => {
               className="cursor-point hover:-mt-5 hover:text-primary"
               href="/shop"
             >
-              Shop
+              Upcoming
             </Link>
           </li>
         </ul>

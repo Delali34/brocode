@@ -5,6 +5,7 @@ import Navbar2 from "./Navbar2";
 import { auth } from "../firebase";
 import {
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
@@ -13,19 +14,30 @@ import Link from "next/link";
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const [dob, setDob] = useState("");
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [verificationSent, setVerificationSent] = useState(false);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      console.log("Signed up successfully.");
-      // Redirecting after sign up
-      if (typeof window !== "undefined") {
-        window.location.href = "/";
+      if (!agreedToTerms) {
+        setErrorMessage("You must agree to the terms and conditions.");
+        return;
       }
+
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      await sendEmailVerification(user);
+      setVerificationSent(true);
     } catch (error) {
-      console.error("Error signing up: ", error);
+      console.error("Error signing up:", error);
+      setErrorMessage(error.message);
     }
   };
 
@@ -40,6 +52,7 @@ function SignUp() {
       }
     } catch (error) {
       console.error("Error signing up with Google: ", error);
+      setErrorMessage(error.message);
     }
   };
 
@@ -63,34 +76,65 @@ function SignUp() {
           required
           className="w-full p-2 border-2 border-primary bg-transparent text-primary"
         />
-        {/* <input
-          type="date"
-          placeholder="Date of Birth"
-          value={dob}
-          onChange={(e) => setDob(e.target.value)}
-          required
-          className="w-full p-2 border-2 border-primary bg-transparent text-primary"
-        /> */}
+        <div className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            checked={agreedToTerms}
+            onChange={() => setAgreedToTerms(!agreedToTerms)}
+            className="form-checkbox text-primary"
+          />
+          <label className="text-sm">
+            I agree to the{" "}
+            <Link
+              className="underline text-primary"
+              href="/terms-and-conditions"
+            >
+              terms and conditions
+            </Link>
+          </label>
+        </div>
+
+        {errorMessage && (
+          <p className="text-red-500 text-center">{errorMessage}</p>
+        )}
+
+        {verificationSent && (
+          <div className="text-center text-green-500">
+            Verification email sent! Please check your email to verify your
+            account.
+          </div>
+        )}
 
         <button
           type="submit"
-          className="w-full p-2 bg-primary text-secondary font-bold"
+          className={`w-full p-2 font-bold ${
+            agreedToTerms
+              ? "bg-primary text-secondary"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+          }`}
+          disabled={!agreedToTerms}
         >
           Sign Up
         </button>
       </form>
+
       <button
         onClick={handleGoogleSignUp}
-        className="w-96 p-2 mt-4 bg-primary text-secondary font-bold"
+        className={` w-96 p-2 font-bold ${
+          agreedToTerms
+            ? "bg-primary text-secondary"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
+        disabled={!agreedToTerms}
       >
         Sign Up with Google
       </button>
+
       <h1 className="text-white text-sm mt-5 text-center">
         Already have an Account?{" "}
-        <Link href="/LogIn" className="underline text-xl font-bold">
+        <Link className="underline text-xl font-bold" href="/LogIn">
           Log In
         </Link>{" "}
-        <span></span>
       </h1>
     </div>
   );
