@@ -36,8 +36,8 @@ export default function HelpRequestForm() {
   };
 
   return (
-    <div className="bg-primary px-10 h-[100vh]">
-      <div className="container mx-auto px-10 pt-20 flex items-center justify-between">
+    <div className="bg-primary px-5 h-[100vh]">
+      <div className="container mx-auto  pt-20 flex items-center justify-between">
         <div className="text-2xl text-black flex gap-1 font-bold items-center">
           <Link href="/">
             <BiArrowBack />
@@ -51,7 +51,7 @@ export default function HelpRequestForm() {
           <h1>Help Request</h1>
         </div>
       </div>
-      <div className="pt-32 flex items-center justify-center ">
+      <div className="pt-32 flex items-center justify-center px-10 md:px-0">
         <div className="w-full max-w-md bg-gray-800 p-8 rounded-md shadow-lg text-primary">
           <form
             ref={formRef}
