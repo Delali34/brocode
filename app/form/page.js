@@ -55,7 +55,7 @@ export default function HelpRequestForm() {
         <div className="w-full max-w-md bg-gray-800 p-8 rounded-md shadow-lg text-primary">
           <form
             ref={formRef}
-            action="https://getform.io/f/66b5c88f-515f-4c23-940e-ed4448d6a52f"
+            action="https://getform.io/f/5f447ae0-a872-4580-b2d6-d785f2ac8fa6"
             method="POST"
             encType="multipart/form-data"
           >
