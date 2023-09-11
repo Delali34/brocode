@@ -54,7 +54,7 @@ function SignUp() {
       console.error(err);
       switch (err.code) {
         case "auth/unauthorized-domain":
-          setErrorMessage("No account found with this email. Please sign up.");
+          setErrorMessage("error. Please sign up.");
           break;
       }
     }
