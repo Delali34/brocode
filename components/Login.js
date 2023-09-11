@@ -4,6 +4,8 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import Navbar from "./Navbar2";
 import Link from "next/link";
+import { analytics } from "../firebase";
+import { logEvent } from "firebase/analytics";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -31,10 +33,15 @@ function Login() {
           "Email not verified. Please check your email for the verification link."
         );
         await user.sendEmailVerification(); // automatically send a new verification email
+        logEvent(analytics, "login_error", {
+          error_message: "Email not verified",
+        });
         return;
       }
       window.location.href = "/";
+      logEvent(analytics, "login", { method: "email_and_password" });
     } catch (err) {
+      logEvent(analytics, "login_error", { error_message: err.message });
       console.error(err);
       switch (err.code) {
         case "auth/user-not-found":
@@ -56,11 +63,14 @@ function Login() {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+
       console.log("Signed up with Google.");
+
       // Redirecting after sign up with Google
       if (typeof window !== "undefined") {
         window.location.href = "/";
       }
+      logEvent(analytics, "login", { method: "google" });
     } catch (err) {
       console.error(err);
       switch (err.code) {
@@ -68,6 +78,10 @@ function Login() {
           setErrorMessage("error. Please sign up.");
           break;
       }
+      logEvent(analytics, "login_error", {
+        method: "google",
+        error_message: err.message,
+      });
     }
   };
 

@@ -1,8 +1,8 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 import { signOut } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyChLPTEIF9Y-N29PMzzrnxSjb11hMOJNoM",
@@ -16,6 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const analytics = getAnalytics(app);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -28,7 +29,7 @@ export const signInWithGoogle = async () => {
     throw error;
   }
 };
+
 auth.settings.appVerificationDisabledForTesting = false;
-export { signOut };
-export { auth };
-export { signInWithEmailAndPassword };
+
+export { signOut, auth, signInWithEmailAndPassword, analytics };

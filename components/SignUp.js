@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Navbar2 from "./Navbar2";
 import { auth } from "../firebase";
+import { analytics } from "../firebase";
+import { logEvent } from "firebase/analytics";
+
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -35,9 +38,11 @@ function SignUp() {
 
       await sendEmailVerification(user);
       setVerificationSent(true);
+      logEvent(analytics, "sign_up", { method: "email_and_password" });
     } catch (error) {
       console.error("Error signing up:", error);
       setErrorMessage(error.message);
+      logEvent(analytics, "sign_up_error", { error_message: error.message });
     }
   };
 
@@ -45,6 +50,7 @@ function SignUp() {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
+      logEvent(analytics, "sign_up", { method: "google" });
       console.log("Signed up with Google.");
       // Redirecting after sign up with Google
       if (typeof window !== "undefined") {
@@ -52,6 +58,10 @@ function SignUp() {
       }
     } catch (err) {
       console.error(err);
+      logEvent(analytics, "sign_up_error", {
+        method: "google",
+        error_message: err.message,
+      });
       switch (err.code) {
         case "auth/unauthorized-domain":
           setErrorMessage("error. Please sign up.");
