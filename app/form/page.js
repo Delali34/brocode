@@ -36,7 +36,7 @@ export default function HelpRequestForm() {
   };
 
   return (
-    <div className="bg-primary h-[100vh]">
+    <div className="md:bg-primary bg-black h-[100vh]">
       <div className="container mx-auto px-10 pt-20 flex items-center justify-between">
         <div className="text-2xl text-black flex gap-1 font-bold items-center">
           <Link href="/">

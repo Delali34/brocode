@@ -50,9 +50,13 @@ function SignUp() {
       if (typeof window !== "undefined") {
         window.location.href = "/";
       }
-    } catch (error) {
-      console.error("Error signing up with Google: ", error);
-      setErrorMessage(error.message);
+    } catch (err) {
+      console.error(err);
+      switch (err.code) {
+        case "auth/unauthorized-domain":
+          setErrorMessage("No account found with this email. Please sign up.");
+          break;
+      }
     }
   };
 
