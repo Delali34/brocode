@@ -36,7 +36,7 @@ export default function HelpRequestForm() {
   };
 
   return (
-    <div className="md:bg-primary bg-black h-[100vh]">
+    <div className="bg-primary px-10 h-[100vh]">
       <div className="container mx-auto px-10 pt-20 flex items-center justify-between">
         <div className="text-2xl text-black flex gap-1 font-bold items-center">
           <Link href="/">
@@ -44,7 +44,7 @@ export default function HelpRequestForm() {
           </Link>
           <Link href="/">
             {" "}
-            <h2>Go back</h2>
+            <h2 className="md:text-2xl text-sm">Go back</h2>
           </Link>
         </div>
         <div>
