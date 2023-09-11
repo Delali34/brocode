@@ -1,3 +1,4 @@
+// pages/_app.js
 "use client";
 import "./globals.css";
 import { useState, useEffect } from "react";
@@ -22,14 +23,7 @@ function MyApp({ Component, pageProps }) {
     // This function is called whenever the user's authentication status changes.
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        if (user.emailVerified) {
-          setUserAuthenticated(true);
-        } else {
-          // If email is not verified, redirect to signup page
-          if (typeof window !== "undefined") {
-            window.location.href = "/SignUp";
-          }
-        }
+        setUserAuthenticated(true);
       } else {
         setUserAuthenticated(false);
       }
@@ -42,7 +36,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
