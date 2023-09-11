@@ -31,21 +31,25 @@ function Login() {
       const user = userCredential.user;
       if (!user.emailVerified) {
         setError(
-          "Email not verified. Please check your email for verification link or Sign up again."
+          "Email not verified. Please check your email for the verification link."
         );
+        await user.sendEmailVerification(); // automatically send a new verification email
         return;
       }
       window.location.href = "/";
     } catch (err) {
+      console.error(err);
       switch (err.code) {
         case "auth/user-not-found":
-          setEmailError("Cannot find email. Please sign up.");
+          setEmailError("No account found with this email. Please sign up.");
           break;
         case "auth/wrong-password":
-          setPasswordError("Wrong password. Try again");
+          setPasswordError("Incorrect password. Please try again.");
           break;
-        default:
-          setError(err.message);
+        case "auth/too-many-requests":
+          setError(
+            "Too many unsuccessful login attempts. Please try again later."
+          );
           break;
       }
     }
