@@ -124,12 +124,12 @@ function SignUp() {
 
       <button
         onClick={handleGoogleSignUp}
-        // className={` w-96 p-2 font-bold ${
-        //   agreedToTerms
-        //     ? "bg-primary text-secondary"
-        //     : "bg-gray-300 text-gray-500 cursor-not-allowed"
-        // }`}
-        // disabled={!agreedToTerms}
+        className={` w-96 p-2 font-bold ${
+          agreedToTerms
+            ? "bg-primary text-secondary"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
+        disabled={!agreedToTerms}
       >
         Sign Up with Google
       </button>
