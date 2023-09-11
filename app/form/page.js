@@ -51,7 +51,7 @@ export default function HelpRequestForm() {
           <h1>Help Request</h1>
         </div>
       </div>
-      <div className="pt-32 flex items-center justify-center px-10 md:px-0">
+      <div className="pt-32 flex items-center justify-center md:px-0">
         <div className="w-full max-w-md bg-gray-800 p-8 rounded-md shadow-lg text-primary">
           <form
             ref={formRef}
