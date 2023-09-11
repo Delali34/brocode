@@ -29,7 +29,7 @@ export default function Home() {
         setUserAuthenticated(true);
       } else {
         setUserAuthenticated(false);
-        window.location.href = "/Login"; // Adjust the route to your login page
+        window.location.href = "/LogIn"; // Adjust the route to your login page
       }
     });
   }, []);
