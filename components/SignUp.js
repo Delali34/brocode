@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar2 from "./Navbar2";
 import { auth } from "../firebase";
 import { analytics } from "../firebase";
-import { logEvent } from "firebase/analytics";
+import { logEvent } from "@firebase/analytics";
 
 import {
   createUserWithEmailAndPassword,

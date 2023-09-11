@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 import { signOut } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyChLPTEIF9Y-N29PMzzrnxSjb11hMOJNoM",
@@ -16,7 +16,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const analytics = getAnalytics(app);
+let analytics;
+if (typeof window !== "undefined" && isSupported()) {
+  analytics = getAnalytics(app);
+}
 
 const googleProvider = new GoogleAuthProvider();
 

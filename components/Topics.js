@@ -6,7 +6,7 @@ export default function WordScroller() {
     "Bipolar disorder",
     "Post-traumatic stress disorder (PTSD)",
     "Obsessive-compulsive disorder (OCD)",
-    "Midlife Crises",
+    "Midlife Crisis",
     "Eating disorders",
     "Substance abuse and addiction",
     "Self-esteem and body image issues",
