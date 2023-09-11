@@ -128,7 +128,7 @@ const MobileMenu = ({ userEmail }) => {
                 isVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-              <Link href="Upcoming">Upcoming</Link>
+              <Link href="/shop">Shop</Link>
             </div>
 
             <p className="text-white text-[8px] pt-36">

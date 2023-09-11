@@ -81,7 +81,7 @@ const Navbar = ({ userEmail }) => {
               className="cursor-point hover:-mt-5 hover:text-primary"
               href="/shop"
             >
-              Upcoming
+              shop
             </Link>
           </li>
         </ul>
