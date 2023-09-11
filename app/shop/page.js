@@ -9,22 +9,10 @@ function page() {
     <div className="bg-primary h-[100vh]">
       <div className="container mx-auto px-5  pt-20 flex items-center justify-between">
         <div className="text-2xl text-black flex gap-1 font-bold items-center">
-          <Link
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.back();
-            }}
-          >
+          <Link href="/">
             <BiArrowBack />
           </Link>
-          <Link
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.back();
-            }}
-          >
+          <Link href="/">
             <h2 className="md:text-2xl text-sm">Go back</h2>
           </Link>
         </div>

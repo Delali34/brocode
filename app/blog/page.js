@@ -89,13 +89,7 @@ function page() {
           >
             <BiArrowBack />
           </Link>
-          <Link
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.back();
-            }}
-          >
+          <Link href="/">
             <h2 className="md:text-2xl text-sm">Go back</h2>
           </Link>
         </div>
