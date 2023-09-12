@@ -75,7 +75,7 @@ function Login() {
       console.error(err);
       switch (err.code) {
         case "auth/unauthorized-domain":
-          setErrorMessage("error. Please sign up.");
+          setErrorMessage("error. Please sign up with email and password.");
           break;
       }
       logEvent(analytics, "login_error", {
@@ -116,7 +116,9 @@ function Login() {
                 className="w-full p-2 border rounded"
               />
               {passwordError && (
-                <p className="text-red-500 text-sm mt-2">{passwordError}</p>
+                <p className="text-red-500 font-semibold text-sm mt-2">
+                  {passwordError}
+                </p>
               )}
             </div>
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}

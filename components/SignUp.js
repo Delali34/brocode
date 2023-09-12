@@ -41,7 +41,25 @@ function SignUp() {
       logEvent(analytics, "sign_up", { method: "email_and_password" });
     } catch (error) {
       console.error("Error signing up:", error);
-      setErrorMessage(error.message);
+      let errorMsg;
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          errorMsg = "The email address is already in use by another account.";
+          break;
+        case "auth/invalid-email":
+          errorMsg = "The email address is not valid.";
+          break;
+        case "auth/weak-password":
+          errorMsg = "The password is too weak.";
+          break;
+        case "auth/operation-not-allowed":
+          errorMsg =
+            "Email/Password accounts are not enabled. Enable email/password in Firebase Console.";
+          break;
+        default:
+          errorMsg = error.message;
+      }
+      setErrorMessage(errorMsg);
       logEvent(analytics, "sign_up_error", { error_message: error.message });
     }
   };
@@ -58,15 +76,31 @@ function SignUp() {
       }
     } catch (err) {
       console.error(err);
+      let errorMsg;
+      switch (err.code) {
+        case "auth/unauthorized-domain":
+          errorMsg = "The domain is not authorized for OAuth operations.";
+          break;
+        case "auth/cancelled-popup-request":
+          errorMsg = "Popup closed by user before finalizing the operation.";
+          break;
+        case "auth/popup-blocked":
+          errorMsg = "Popup blocked by the browser.";
+          break;
+        case "auth/popup-closed-by-user":
+          errorMsg = "Popup closed by user.";
+          break;
+        case "auth/auth-domain-config-required":
+          errorMsg = "OAuth domain configuration required.";
+          break;
+        default:
+          errorMsg = err.message;
+      }
+      setErrorMessage(errorMsg);
       logEvent(analytics, "sign_up_error", {
         method: "google",
         error_message: err.message,
       });
-      switch (err.code) {
-        case "auth/unauthorized-domain":
-          setErrorMessage("error. Please sign up.");
-          break;
-      }
     }
   };
 
