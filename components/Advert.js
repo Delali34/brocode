@@ -112,19 +112,19 @@ function Advert() {
       <div>
         <div className="flex flex-wrap justify-center items-center gap-8 mt-20">
           <Image
-            src="/papapizza.png"
+            src="/papa2.png"
             width={150}
             height={150}
             alt="the bro code gh"
           />
           <Image
-            src="/carwash.png"
+            src="/carwash (1).png"
             width={150}
-            height={150}
+            height={100}
             alt="the bro code gh"
           />
           <Image
-            src="/munchys logo png (1).png"
+            src="/munchys.png"
             width={150}
             height={150}
             alt="the bro code gh"
