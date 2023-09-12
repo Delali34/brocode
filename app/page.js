@@ -14,6 +14,7 @@ import Slider from "@/components/Slider";
 import SocialMedia from "@/components/Footer";
 import Home from "@/components/Home";
 import Advert from "@/components/Advert";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -68,6 +69,7 @@ function MyApp({ Component, pageProps }) {
       ) : (
         <Home />
       )}
+      <Analytics />
     </>
   );
 }
