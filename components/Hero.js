@@ -49,7 +49,7 @@ function hero() {
             </Link>
           </div>
           <div>
-            <Link href="">
+            <Link target="_blank" href="https://www.youtube.com/@BroCodeGH">
               <div className="border-2 mt-10  flex rounded-[50px]  items-center gap-3 justify-center p-2">
                 <AiFillYoutube className="text-red-600 md:text-4xl text-2xl" />
                 <h1 className="text-white xl:text-2xl text-[12px] font-semibold lg:text-[16px]">
