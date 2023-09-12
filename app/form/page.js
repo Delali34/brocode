@@ -1,13 +1,32 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
+import { auth } from "@/firebase";
+import { useRouter } from "next/navigation";
 
 export default function HelpRequestForm() {
   const [step, setStep] = useState(1);
   const [error, setError] = useState("");
   const formRef = useRef(null);
+  const router = useRouter();
+
+  const [isUserAuthenticated, setUserAuthenticated] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserAuthenticated(true);
+      } else {
+        setUserAuthenticated(false);
+        router.push("/LogIn"); // Adjust the route to your login page
+      }
+    });
+  }, [router]);
+
+  // If authentication status is null, return null to prevent flash of content
+  if (isUserAuthenticated === null) return null;
 
   const nextStep = () => {
     const steps = document.querySelectorAll(".step");

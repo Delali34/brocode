@@ -70,12 +70,30 @@
 //   );
 // }
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
+import { auth } from "@/firebase";
+import { useRouter } from "next/navigation";
 
 function page() {
+  const [isUserAuthenticated, setUserAuthenticated] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserAuthenticated(true);
+      } else {
+        setUserAuthenticated(false);
+        router.push("/LogIn"); // Adjust the route to your login page
+      }
+    });
+  }, [router]);
+
+  // If authentication status is null, return null to prevent flash of content
+  if (isUserAuthenticated === null) return null;
   return (
     <div className="bg-primary h-[100vh]">
       <div className="container mx-auto px-5  pt-20 flex items-center justify-between">
