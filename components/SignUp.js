@@ -143,7 +143,9 @@ function SignUp() {
         </div>
 
         {errorMessage && (
-          <p className="text-red-500 text-center">{errorMessage}</p>
+          <p className="text-red-500 font-semibold text-center">
+            {errorMessage}
+          </p>
         )}
 
         {verificationSent && (
