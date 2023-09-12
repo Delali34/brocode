@@ -77,7 +77,7 @@ import Link from "next/link";
 import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
 
-function page() {
+function Page() {
   const [isUserAuthenticated, setUserAuthenticated] = useState(null);
   const router = useRouter();
 
@@ -130,4 +130,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
