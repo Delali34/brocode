@@ -130,9 +130,9 @@ function Advert() {
             alt="the bro code gh"
           />
           <Image
-            src="/caveman.jpeg"
+            src="/tcl.png"
             width={150}
-            height={150}
+            height={100}
             alt="the bro code gh"
           />
         </div>
