@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="footerContainer">
+    <footer className="footerContainer ">
       <div className="footerSection">
         <h3>Quick Links</h3>
         <ul>

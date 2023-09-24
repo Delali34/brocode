@@ -34,7 +34,11 @@ const Page = ({ params }) => {
   }, [params]);
 
   if (!post) {
-    return <div>Loading...</div>;
+    return (
+      <div className="bg-black flex justify-center items-center h-screen">
+        <img src="/load.gif" alt="" />
+      </div>
+    );
   }
 
   return (

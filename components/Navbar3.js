@@ -6,7 +6,7 @@ import Menu2 from "@/components/Menu2";
 const Navbar = () => {
   return (
     <nav className="absolute top-0 right-0 left-0 font-Cali z-10">
-      <div className="container hidden mx-auto lg:flex justify-between items-center">
+      <div className="container hidden mx-auto lg:flex justify-between items-center px-10">
         <Link className="text-4xl font-bold" href="/">
           <Image
             width={200}

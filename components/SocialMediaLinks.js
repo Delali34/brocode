@@ -5,7 +5,7 @@ import { FaTwitter, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const SocialMediaLinks = () => {
   return (
-    <div className="socialMediaContainer">
+    <div className="socialMediaContainer mb-10">
       <a
         href="https://twitter.com/TheBroCodeGh?s=20"
         className="icon twitter"

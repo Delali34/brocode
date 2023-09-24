@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App  ">
       <div className="svg">
-        <section className="flex flex-col  lg:pt-20 pt-10  justify-between items-center container mx-auto p-2">
+        <section className="flex flex-col  lg:pt-20 pt-10 lg:px-10 justify-between items-center container mx-auto p-2">
           <div>
             <div className="flex items-center justify-center ">
               <h1 className="bg-primary w-[180px] h-[30px] rounded-lg"></h1>

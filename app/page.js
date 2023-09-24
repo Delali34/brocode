@@ -15,6 +15,7 @@ import SocialMedia from "@/components/Footer";
 import Home from "@/components/Home";
 import Advert from "@/components/Advert";
 import { Analytics } from "@vercel/analytics/react";
+import Donate from "@/components/Donate";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ function MyApp({ Component, pageProps }) {
       ) : isUserAuthenticated ? (
         <div className="homepage-content">
           <Homepage />
+          {/* <Donate /> */}
           <About />
           <What />
           <Host />

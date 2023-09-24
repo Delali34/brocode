@@ -47,9 +47,30 @@
 .slider3 .slide-track {
   animation: scroll 40s linear infinite;
   display: flex;
-  width: calc(250px * 14);
+  width: calc(250px * 3);
 }
 .slider3 .slide3 {
   height: 100px;
   width: 250px;
+}
+
+/* donation */
+@media (max-width: 639px) {
+  .custom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* On medium screens, display two columns */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* On large screens, display three columns */
+@media (min-width: 1024px) {
+  .custom-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

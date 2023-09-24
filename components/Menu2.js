@@ -53,8 +53,8 @@ const MobileMenu = ({ userEmail }) => {
 
   return (
     <nav className="absolute top-0 right-0 left-0 font-Cali z-10">
-      <div className="lg:hidden">
-        <div className="flex items-center justify-between">
+      <div className="lg:hidden ">
+        <div className="flex  items-center justify-between">
           <Image
             width={120}
             height={120}

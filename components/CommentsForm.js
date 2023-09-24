@@ -49,7 +49,7 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="max-w-[1800px] mx-auto mt-20 px-10 flex justify-between">
+    <div className="max-w-[1800px] mx-auto mt-20 lg:px-10 px-5 flex justify-between">
       <div></div>
       <div className="bg-primary lg:w-[70%] w-full  shadow-lg rounded-lg p-8 pb-12 mb-8">
         <h3 className="text-xl mb-8 font-semibold border-b pb-4">

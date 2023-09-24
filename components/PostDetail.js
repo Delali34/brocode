@@ -70,7 +70,7 @@ const PostDetail = ({ post }) => {
           />
           <div className="gradient-overlay4"></div>
           <div className="absolute top-[50%] container mx-auto px-10 left-0 right-0">
-            <h3 className="text-white text-center lg:text-5xl text-3xl font-bold">
+            <h3 className="text-white text-center lg:text-4xl text-xl font-bold">
               {post.title}
             </h3>
             <div className="flex justify-center items-center gap-3 mt-5">
@@ -81,14 +81,14 @@ const PostDetail = ({ post }) => {
                 width="50px"
                 className="align-middle rounded-full"
               />
-              <p className="text-primary font-semibold text-xl">
+              <p className="text-primary font-semibold text-sm">
                 {moment(post.createdAt).format("MMM DD, YYYY")}
               </p>
             </div>
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="max-w-[1800px] px-10 text-white pt-20">
+          <div className="max-w-[1800px] lg:px-10 px-5 text-white pt-20">
             <div className="flex flex-col lg:flex-row justify-between lg:gap-0 gap-5">
               <div className="lg:w-[30%] w-full">
                 <div className=" lg:sticky top-8">
@@ -101,7 +101,7 @@ const PostDetail = ({ post }) => {
                   />
                 </div>
               </div>
-              <div className="lg:w-[70%] w-full text-xl">
+              <div className="lg:w-[70%] w-full lg:text-xl text-sm">
                 {post.content.raw.children.map((typeObj, index) => {
                   const children = typeObj.children.map((item, itemIndex) =>
                     getContentFragment(itemIndex, item.text, item)

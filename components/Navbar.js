@@ -50,8 +50,8 @@ const Navbar = ({ userEmail }) => {
 
   return (
     <nav className="absolute top-0 right-0 left-0 font-Cali z-10">
-      <div className="container hidden mx-auto lg:flex justify-between items-center">
-        <Link className="text-4xl font-bold" href="/">
+      <div className="container hidden mx-auto lg:flex justify-between items-center px-10">
+        <Link className="text-4xl font-bold -ml-10" href="/">
           <Image
             width={200}
             height={200}
@@ -59,7 +59,15 @@ const Navbar = ({ userEmail }) => {
             alt="the bro code with kalyjay"
           />
         </Link>
-        <ul className="flex space-x-10 text-white  er text-xl">
+        <ul className="flex space-x-10 text-white text-xl">
+          {/* <li>
+            <Link
+              className="cursor-point hover:text-primary hover:-mt-5"
+              href="/donate"
+            >
+              Donate
+            </Link>
+          </li> */}
           <li>
             <Link
               className="cursor-point hover:text-primary hover:-mt-5"
@@ -89,7 +97,7 @@ const Navbar = ({ userEmail }) => {
           <h1
             ref={profileRef}
             onClick={toggleDropdown}
-            className="text-2xl font-bold font-Cali hover:border-2 p-3 w-[60px] h-[60px] -right-5 flex items-center justify-center rounded-[100%] bg-primary"
+            className="text-2xl font-bold font-Cali hover:border-2 p-3 w-[60px] h-[60px] flex items-center justify-center rounded-[100%] bg-primary"
           >
             {getInitials(userEmail) || "P"} {/* P for Profile */}
           </h1>
@@ -100,7 +108,7 @@ const Navbar = ({ userEmail }) => {
               className="absolute right-0 mt-2 border rounded-md shadow-lg bg-primary font-bold text-black"
             >
               <div className="p-4">{userEmail}</div>
-              <hr className="border-t" />
+              {/* <hr className="border-t" /> */}
               <div onClick={handleLogout} className="p-4 hover:bg-white">
                 <button>Logout</button>
               </div>

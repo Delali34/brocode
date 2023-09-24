@@ -11,7 +11,7 @@ const Comments = ({ slug }) => {
     getComments(slug).then((result) => setComments(result));
   }, []);
   return (
-    <div className="max-w-[1800px] mx-auto mt-20 px-10 flex justify-between">
+    <div className="max-w-[1800px] mx-auto mt-20 lg:px-10 px-5 flex justify-between">
       <div></div>
       <div className="lg:w-[70%] w-full">
         {comment.length > 0 && (

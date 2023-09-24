@@ -20,8 +20,8 @@ function BlogHead() {
           <div className="-ml-10">
             <Link href="/">
               <Image
-                width={150}
-                height={150}
+                width={100}
+                height={100}
                 src="/WhatsApp_Image_2023-08-15_at_11.31.25_PM-removebg-preview.png"
                 alt="the bro code with kalyjay"
               />

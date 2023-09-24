@@ -22,7 +22,7 @@ function Host() {
 
   return (
     <div className="svg2">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center p-5">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between xl:px-10 items-center p-5">
         <div className="lg:w-[60%] p-5">
           <div className=" ">
             <h1 className="bg-white w-[180px] h-[30px] rounded-lg mb-5 lg:mb-10"></h1>
