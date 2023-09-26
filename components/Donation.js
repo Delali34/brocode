@@ -17,8 +17,6 @@ function Page() {
   const router = useRouter();
 
   const [isUserAuthenticated, setUserAuthenticated] = useState(null);
-  const publicKey = process.env.REACT_APP_PAYSTACK_PUBLIC_KEY;
-  console.log(process.env.REACT_APP_PAYSTACK_PUBLIC_KEY);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -42,7 +40,7 @@ function Page() {
     reference: new Date().getTime().toString(),
     email,
     amount: Number(donationAmount) * 100,
-    publicKey: publicKey,
+    publicKey: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY,
     currency: "GHS",
   };
 
