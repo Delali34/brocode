@@ -114,6 +114,13 @@ const MobileMenu = ({ userEmail }) => {
                 isVisible ? "opacity-100" : "opacity-0"
               }`}
             >
+              <Link href="/donate">Donate</Link>
+            </div>
+            <div
+              className={`text-white/70 font-bold transition-opacity duration-1000 text-[16px]  ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <Link href="/form">Help Request</Link>
             </div>
             <div

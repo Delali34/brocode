@@ -60,14 +60,14 @@ const Navbar = ({ userEmail }) => {
           />
         </Link>
         <ul className="flex space-x-10 text-white text-xl">
-          {/* <li>
+          <li>
             <Link
               className="cursor-point hover:text-primary hover:-mt-5"
               href="/donate"
             >
               Donate
             </Link>
-          </li> */}
+          </li>
           <li>
             <Link
               className="cursor-point hover:text-primary hover:-mt-5"

@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }) {
       ) : isUserAuthenticated ? (
         <div className="homepage-content">
           <Homepage />
-          {/* <Donate /> */}
+          <Donate />
           <About />
           <What />
           <Host />
