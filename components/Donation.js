@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import BlogHead from "@/components/BlogHead";
 import Navbar from "@/components/Navbar";
+import DonateHeader from "@/components/DonateHeader";
 import { PaystackButton } from "react-paystack";
 
 import dynamic from "next/dynamic";
@@ -59,7 +60,7 @@ function Page() {
 
   return (
     <div className="bg-black">
-      <BlogHead />
+      <DonateHeader />
       <section className="container mx-auto lg:px-10 lg:py-20">
         <div className="">
           <h1 className="text-white text-center text-4xl lg:text-6xl mt-10 font-extrabold ">
