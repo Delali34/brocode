@@ -167,14 +167,16 @@ function Page() {
                   onChange={(e) => setDonationAmount(e.target.value)}
                 />
               </div>
-
-              <div>
-                <PaystackButton
-                  {...config}
-                  text="Donate Now"
-                  onSuccess={onSuccess}
-                  onClose={onClose}
-                />
+              <div className="flex justify-center">
+                {" "}
+                <div className="bg-white w-[130px] font-semibold rounded-xl hover:bg-black cursor-pointer hover:text-white p-3">
+                  <PaystackButton
+                    {...config}
+                    text="Donate Now"
+                    onSuccess={onSuccess}
+                    onClose={onClose}
+                  />
+                </div>
               </div>
             </div>
           </div>
