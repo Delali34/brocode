@@ -40,7 +40,7 @@ function Page() {
     reference: new Date().getTime().toString(),
     email,
     amount: Number(donationAmount) * 100,
-    publicKey: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY,
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
     currency: "GHS",
   };
 
