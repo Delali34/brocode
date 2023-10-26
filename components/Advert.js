@@ -117,12 +117,7 @@ function Advert() {
             height={150}
             alt="the bro code gh"
           />
-          <Image
-            src="/carwash (1).png"
-            width={150}
-            height={100}
-            alt="the bro code gh"
-          />
+
           <Image
             src="/munchys.png"
             width={150}
