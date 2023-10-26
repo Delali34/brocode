@@ -28,7 +28,7 @@ function BlogHead() {
             </Link>
           </div>
           <div className="flex justify-center items-center">
-            <div className="bg-white/90 flex border-2 md:text-sm text-xs fixed z-10 top-12 border-black items-center gap-8 p-5 rounded-[80px] font-semibold md:h-[40px] h-[25px] px-5">
+            <div className="bg-white/90 flex border-2 md:text-sm text-xs fixed z-10 md:top-12 top-5 border-black items-center gap-8 p-5 rounded-[80px] font-semibold md:h-[40px] h-[25px] px-5">
               <Link href="/blog">
                 {" "}
                 <h3>Home</h3>
