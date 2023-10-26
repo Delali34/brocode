@@ -117,7 +117,6 @@ function Advert() {
             height={150}
             alt="the bro code gh"
           />
-
           <Image
             src="/munchys.png"
             width={150}
